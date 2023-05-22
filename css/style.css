@@ -1,0 +1,26 @@
+@import url(sanitize.css);
+h1{
+    font-size: 24px;
+    margin:0;
+}
+div.content{
+    width: 600px;
+    padding: 8px;
+    margin:10px auto;
+    border:1px solid #d1d1d1;
+}
+input{
+    border:none;
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 16px; /* inputタグのfont-sizeは16px以上でないとiphoneで不具合が出てしまうらしい **/
+    padding:8px
+}
+button{
+    width: 100%;
+    background-color: #2096f3;
+    color:white;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0,0,0, 0.4);
+}
