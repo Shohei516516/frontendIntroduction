@@ -1,3 +1,5 @@
+ @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 body{
     background-color: #f0f0f0;
     padding: 10px;
@@ -15,11 +17,11 @@ header h1{
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    font-family: Arial;
+    font-family: 'Pangolin', cursive;
 }
 
 .container{
-    width:800px;
+    max-width:800px;
     margin:0 auto;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
@@ -86,4 +88,21 @@ footer{
     text-align: center;
     font-size: .8em;
     padding: 5px;
+}
+
+@media screen and (max-width:350px){
+    .description img{
+        float:none;
+        margin: 10px auto;
+        display:block;
+    }
+    header h1{
+        font-size: 12px;
+    }
+    .infomation h1{
+        font-size:14px;
+    }
+    .songs ol {
+        display:block;
+    }
 }
