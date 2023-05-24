@@ -29,11 +29,11 @@ header h1{
 .description img{
     float:left;
     margin:0 10px 10px 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 }
-
-/* h2{
-    clear:left;
-} */
 
 span.type{
     background-color: #e35a4d;
@@ -90,7 +90,11 @@ footer{
     padding: 5px;
 }
 
-@media screen and (max-width:350px){
+.description img:hover{
+    opacity: .5;
+}
+
+@media screen and (max-width:350px){  
     .description img{
         float:none;
         margin: 10px auto;
