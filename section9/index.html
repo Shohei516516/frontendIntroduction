@@ -13,10 +13,54 @@
 </head>
 <body>
     <div class="container">
-        <p class="timer">00:00:00</p>
+        <p id="timer">00:00:00</p>
         <div>
-            <button id="start" class="btn btn-lg btn-primary">START</button>
+            <button id="start_stop" class="btn btn-lg btn-primary">START</button>
         </div>
     </div>
+    <script>
+        const start = new Date();
+        let timer_id;
+        document.getElementById("start_stop").addEventListener('click',()=>{
+            if(document.getElementById("start_stop").innerHTML === "START"){
+                timer_id = setInterval(goTimer,1000);
+    
+                //stopボタンにする
+                document.getElementById("start_stop").innerHTML='STOP';
+                document.getElementById("start_stop").classList.remove("btn-primary");
+                document.getElementById("start_stop").classList.add('btn-danger');
+            }else{
+
+                clearInterval(timer_id)
+                //startボタンにする
+                document.getElementById("start_stop").innerHTML='START';
+                document.getElementById("start_stop").classList.remove("btn-danger");
+                document.getElementById("start_stop").classList.add('btn-primary');
+            }
+        });
+
+        const addZero = (value) =>{
+            if (value<10)value='0'+value;
+            return value;
+        }
+        const goTimer = () =>{
+            let now =new Date();
+
+            const milli = now.getTime() - start.getTime();
+            let seconds= Math.floor(milli / 1000);
+            let minutes = Math.floor(seconds/60);
+            let hours = Math.floor(minutes/60);
+
+            seconds= seconds - minutes * 60;
+            minutes= minutes - hours * 60;
+
+            hours=addZero(hours);
+            minutes=addZero(minutes);
+            seconds=addZero(seconds);
+
+            document.getElementById('timer').innerHTML=`${hours}:${minutes}:${seconds}`
+
+        }
+    </script>
 </body>
 </html>
