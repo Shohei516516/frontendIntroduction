@@ -44,3 +44,11 @@ header h1{
     color: #fff;
     width: 100%;
 }
+
+.inner p{
+    padding: 20px;
+
+}
+.inner span{
+    margin-left: 10px;
+}
